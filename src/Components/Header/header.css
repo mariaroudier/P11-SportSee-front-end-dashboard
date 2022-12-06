@@ -1,0 +1,30 @@
+header {
+  background-color: black;
+  display: flex;
+  gap: 149px;
+  height: 91px;
+  align-items: center;
+}
+
+.logo {
+  width: 178px;
+  height: fit-content;
+  padding-left: 29px;
+}
+.nav-top{
+  display: flex;
+  justify-content: space-between;
+  padding-right: 87px;
+  width: 100%;
+}
+
+.links-top{
+  color: white;
+  font-size: 24px;
+}
+
+
+
+/* @media screen and (min-width: 416px) and (max-width:768px) {
+
+} */

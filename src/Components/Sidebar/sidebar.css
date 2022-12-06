@@ -1,0 +1,19 @@
+aside {
+      position: absolute;
+      width: 117px;
+}
+
+.nav-aside {
+      display: flex;
+      flex-direction: column;
+}
+.copyright {
+      transform: rotate(180deg);
+      writing-mode: tb;
+      -webkit-writing-mode: tb;
+      -ms-writing-mode: tb;
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+}
