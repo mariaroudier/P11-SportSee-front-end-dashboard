@@ -14,7 +14,8 @@ header {
   height: fit-content;
   padding-left: 29px;
 }
-.nav-top{
+
+.nav-top {
   display: flex;
   justify-content: space-between;
   gap: 30px;
@@ -22,7 +23,7 @@ header {
   width: 100vw;
 }
 
-.links-top{
+.links-top {
   color: white;
   font-size: 24px;
 }

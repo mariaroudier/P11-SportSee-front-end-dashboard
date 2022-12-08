@@ -21,7 +21,12 @@ code {
 
 #root {
   position: relative;
-  display: flex;
+  /* display: flex; */
   width: 100vw;
   height: 1px;
+}
+
+main {
+  padding-left: 224px;
+  padding-right: 107px;
 }
