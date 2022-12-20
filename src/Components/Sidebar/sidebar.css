@@ -4,10 +4,10 @@ aside {
       flex-direction: column;
       min-height: 100vh;
       align-items: center;
-      left:0;
+      left: 0;
       width: 117px;
       background-color: black;
-      padding-top: 341px;
+      padding-top: 240px;
 }
 
 .nav-aside {
@@ -16,12 +16,13 @@ aside {
       align-items: center;
       width: 100%;
       gap: 20px;
-      
+
 }
+
 .copyright {
       color: white;
       font-size: 12px;
-      /* padding-bottom: 164px; */
+      padding-bottom: 94px;
       transform: rotate(180deg);
       writing-mode: tb;
       -webkit-writing-mode: tb;

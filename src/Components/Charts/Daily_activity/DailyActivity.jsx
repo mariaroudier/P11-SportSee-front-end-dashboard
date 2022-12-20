@@ -1,77 +1,68 @@
-import React, { PureComponent } from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import React from 'react';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Line } from 'recharts';
+import { useEffect, useState } from 'react';
+import './dailyActivity.css'
+import OvalBlack from './Oval_black.png'
+import OvalRed from './Oval_red.png'
 
-const data = [
-  {
-    name: 'Page A',
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
-  },
-  {
-    name: 'Page B',
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
-  },
-  {
-    name: 'Page C',
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
-  },
-  {
-    name: 'Page D',
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
-  },
-  {
-    name: 'Page E',
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
-  },
-  {
-    name: 'Page F',
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
-  },
-  {
-    name: 'Page G',
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
-];
 
-export default class DailyActivity extends PureComponent {
-  static demoUrl = 'https://codesandbox.io/s/simple-bar-chart-tpz8r';
+function DailyActivity({data}) {
+  const numbersDays = [{day:1},{day:2},{day:3},{day:4},{day:5},{day:6},{day:7}]
 
-  render() {
-    return (
-      <ResponsiveContainer width="100%" height="100%">
+  const CustomTooltip = ({ active, payload, label }) => {
+    if (active && payload && payload.length) { // вопросики по параметрам
+      return (
+        <div className="custom-tooltip">
+          <p className="label">{`${payload[0].value}kg`}</p>
+          <p className="label">{`${payload[1].value}Kcal`}</p>
+        </div>
+      );
+    }
+  
+    return null;
+  };
+
+  const CustomLegend = () => {
+      return (
+        <div className="custom-legend">
+          <div className='poids-legend'>
+            <img className="oval-icon" src={OvalBlack} alt="oval icon"></img>
+            <p label="kilogram" className="legend-label">Poids (kg)</p>
+          </div>
+          <div className='calories-legend'>
+            <img className="oval-icon" src={OvalRed} alt="oval icon"></img>
+            <p label="calories" className="legend-label">Calories brûlées (kCal)</p>
+          </div>
+          
+        </div>
+      );
+  };
+
+  return (
+    <>
+      <p className='titre-activity'>Activité quotidienne</p>
+      <ResponsiveContainer className="container-activity" width="100%" height="100%">
+
         <BarChart
-          width={500}
-          height={300}
+          width={835}
+          height={320}
           data={data}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey="pv" fill="#8884d8" />
-          <Bar dataKey="uv" fill="#82ca9d" />
+          margin={{ top: 35,}} >
+          
+          <CartesianGrid strokeDasharray="2 2" stroke='#DEDEDE'/>
+          <XAxis data={numbersDays} datakey="day" stroke='#9B9EAC'/>
+         
+          <YAxis orientation="right" stroke="#FBFBFB" tick={{ fill: '#9B9EAC' }} tickLine={{ opacity:'0' }} />
+          <Tooltip content={<CustomTooltip />} />
+          <Legend content={<CustomLegend />} iconType="circle" wrapperStyle={{ top: -35, right: 0,  lineHeight: '24px',textAlign:'end'}}/>
+          <Bar dataKey="kilogram" fill="#282D30" barSize={7}/>
+          <Bar dataKey="calories" fill="#E60000" barSize={7}/>
         </BarChart>
       </ResponsiveContainer>
-    );
-  }
+    </>
+
+  )
+
 }
+
+export default DailyActivity;

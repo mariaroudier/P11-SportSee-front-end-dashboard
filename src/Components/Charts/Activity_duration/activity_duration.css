@@ -1,0 +1,28 @@
+.recharts-cartesian-axis-line {
+      stroke: none;
+}
+
+.legend-session-label {
+      color: white;
+      font-size: 15px;
+      opacity: 0.5;
+      width: 50%;
+
+}
+
+.recharts-surface {
+      height: 263px;
+      width: 100%;
+}
+
+.custom-session-tooltip {
+      background-color: white;
+      color: black;
+
+}
+
+.label-session {
+      color: black;
+      font-size: 8px;
+      padding: 7px;
+}

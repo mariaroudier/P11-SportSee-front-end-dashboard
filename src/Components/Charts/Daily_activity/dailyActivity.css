@@ -1,0 +1,58 @@
+.container-activity {
+      margin-top: 75px;
+      height: fit-content;
+      background-color: #FBFBFB;
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+}
+
+.recharts-default-legend {
+      text-align: end;
+}
+
+.custom-tooltip {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      background-color: #E60000;
+      color: white;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-right: 10px;
+      padding-left: 10px;
+      text-align: center;
+}
+
+.label {
+      margin: 0;
+      font-size: 7px;
+}
+
+.custom-legend {
+      display: flex;
+      justify-content: flex-end;
+      gap: 32px;
+      padding-right: 20px;
+}
+
+.poids-legend,
+.calories-legend {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+}
+
+
+.legend-label {
+      margin: 0;
+      font-size: 14px;
+      color: #74798C;
+}
+
+.oval-icon {
+      width: 8px;
+      height: 8px;
+}

@@ -1,34 +1,14 @@
-import GetUserId from '../../lib/getUserId'
-
-
-// function getName(data) {
-//       console.log(json.data.userInfos.firstName);
-// }
-
-// const name = GetUserId()
-
-
-
-// const  UserId = async() => {
-//       const response = await fetch('http://localhost:3000/user/12');
-//       const json = await response.json();
-//       // name(json)
-//       return json
-// }
-// // UserId()
-
-
-// UserId(data)
-// console.log(data)
-
+import './greetings.css'
 
 function Greetings({name}) {
-// console.log(userInfos.firstName)
       return(
-            <div id='greetings'>
-                  <h1>Bonjour {name}</h1>
-                  <p></p>
+            <>
+            <div id='greetings-box'>
+                  <p className='greetings'>Bonjour&nbsp;</p>
+                  <h1 className="greetings name">{name}</h1>
             </div>
+            <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+            </>
       )
 }
 

@@ -2,16 +2,14 @@ body {
   margin: 0;
   height: 100vh;
   width: 100vw;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 * {
@@ -21,7 +19,6 @@ code {
 
 #root {
   position: relative;
-  /* display: flex; */
   width: 100vw;
   height: 1px;
 }
@@ -29,4 +26,6 @@ code {
 main {
   padding-left: 224px;
   padding-right: 107px;
+  height: 100vh;
+  width: 100vw;
 }
