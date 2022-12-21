@@ -57,15 +57,14 @@ function Dashboard() {
             },[])
 
 
-
       return (
             <>
                   <Greetings name={nameData} />
                   <div id='counters'>
-                        <Counter data={countersData} />
-                        {/* <Counter data={countersData.proteinCount} />
-                        <Counter data={countersData.carbohydrateCount} />
-                        <Counter data={countersData.lipidCount} /> */}
+                        <Counter type='Calories' counter={countersData.calorieCount} />
+                        <Counter type='Proteines' counter={countersData.proteinCount} />
+                        <Counter type='Glucides' counter={countersData.carbohydrateCount} />
+                        <Counter type='Lipides' counter={countersData.lipidCount} />
                   </div>
                   
                   <div id='barchart-activity'>

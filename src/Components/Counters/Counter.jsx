@@ -7,36 +7,31 @@ import Lipids from './fat-icon.png'
 import Glucids from './carbs-icon.png'
 
 
-function Counter({data}) {
-
-
-      // setCalorie(json.data.keyData.calorieCount)
-      return(
+function Counter({type, counter}) {
+      let srcImg = ""
+      switch(type) {
+            case 'Calories':
+                  srcImg = `${Calories}`
+            break;
+            case 'Proteines':
+                  srcImg = `${Proteins}`
+            break;
+            case 'Glucides':
+                  srcImg = `${Glucids}`
+            break;
+            case 'Lipides':
+                  srcImg = `${Lipids}`
+            break;
+      }
             
+      return(
             <>
-                  <div className='box-counter'>
-                        {data.calorieCount ? 
-                        (
-                              <>
-                                    <img className='img-counter' src={Calories} />
+                  <div className='box-counter'> 
+                                    <img className='img-counter' src={srcImg} />
                                     <div className='text-counter'>
-                                          <span>{data.calorieCount}kCal</span>
-                                          <span>Calories</span>
+                                          <span>{counter}kCal</span>
+                                          <span>{type}</span>
                                     </div>
-                              </>
-                              
-                        ) : "" }
-                        {data.proteinCount ? 
-                        (
-                              <>
-                                    <img className='img-counter' src={Proteins} />
-                                    <div className='text-counter'>
-                                          <span>{data.proteinCount}g</span>
-                                          <span>Proteines</span>
-                                    </div>
-                              </>
-                              
-                        ) : "" }
                   </div>
             </>
       )
