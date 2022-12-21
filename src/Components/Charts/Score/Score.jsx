@@ -1,7 +1,7 @@
 import './score.css'
 import React, { PureComponent } from 'react';
 import { useEffect, useState } from 'react';
-import { RadialBarChart, RadialBar, Legend, ResponsiveContainer } from 'recharts';
+import { PieChart, Pie, Legend, Tooltip, ResponsiveContainer } from 'recharts';
 
 // const data = [
 //       {
@@ -12,26 +12,23 @@ import { RadialBarChart, RadialBar, Legend, ResponsiveContainer } from 'recharts
 //       },
 
 function Score({data}){
-      console.log(data)
-      data = data +1
-      console.log(data)
+
+      const percentData = data*100
+      const fakeValue = 1 - percentData
+      
+      const fakeObject = [{value: data},{value:fakeValue}]
+
       return(
 
             <>
-                  <p>Score</p>
+                  <span>Score</span>
+                  <span>{percentData}%</span>
+                  <span>de votre objectif</span>
                   <ResponsiveContainer width="100%" height="100%">
-                        <RadialBarChart cx="50%" cy="50%" innerRadius="10%" outerRadius="80%" barSize={10} data={data}>
-                              <RadialBar
-                              minAngle={15}
-                              label={{ position: 'insideStart', fill: '#FF0000' }}
-                              // background
-                              // clockWise
-                              dataKey="data"
-                              />
-                              <Legend iconSize={10} layout="vertical" verticalAlign="middle" 
-                              // wrapperStyle={{top: '50%',right: 0,transform: 'translate(0, -50%)',lineHeight:24}} 
-                              />
-                        </RadialBarChart>
+                        <PieChart width={400} height={400}>
+                              <Pie dataKey="value" data={fakeObject} cx={500} cy={200} innerRadius={40} outerRadius={80} fill="#82ca9d" />
+                              <Tooltip />
+                        </PieChart>
                   </ResponsiveContainer>
             </>
                   

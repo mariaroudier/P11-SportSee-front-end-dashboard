@@ -4,6 +4,7 @@ import DailyActivity from '../../components/Charts/Daily_activity/DailyActivity'
 import ActivityDuration from '../../components/Charts/Activity_duration/ActivityDuration'
 import ActivityRadar from '../../components/Charts/Activity_radar/ActivityRadar'
 import Score from '../../components/Charts/Score/Score'
+import Counter from '../../components/Counters/Counter'
 import { json } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
@@ -12,12 +13,14 @@ function Dashboard() {
 // greetings
       const [nameData,setName] = useState([])
       const [scoreData,setScore] = useState([])
+      const [countersData,setCounters] = useState([])
       useEffect(() => {
             const  getMainInfo = async() => {
                   const response = await fetch('http://localhost:3000/user/12');
                   const json = await response.json();
                   setName(json.data.userInfos.firstName)
                   setScore(json.data.todayScore)
+                  setCounters(json.data.keyData)
 
             }
             getMainInfo()
@@ -58,6 +61,13 @@ function Dashboard() {
       return (
             <>
                   <Greetings name={nameData} />
+                  <div id='counters'>
+                        <Counter data={countersData} />
+                        {/* <Counter data={countersData.proteinCount} />
+                        <Counter data={countersData.carbohydrateCount} />
+                        <Counter data={countersData.lipidCount} /> */}
+                  </div>
+                  
                   <div id='barchart-activity'>
                         <DailyActivity data={activityData}/>
                   </div>

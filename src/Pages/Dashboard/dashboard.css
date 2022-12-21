@@ -45,6 +45,7 @@
 #score-radial {
       margin: 0;
       margin-top: 50px;
+      padding-top: 25px;
       width: 258px;
       height: 263px;
       border-radius: 5px;

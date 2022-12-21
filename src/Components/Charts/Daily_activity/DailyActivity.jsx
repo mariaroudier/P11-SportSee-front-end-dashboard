@@ -7,7 +7,7 @@ import OvalRed from './Oval_red.png'
 
 
 function DailyActivity({data}) {
-  const numbersDays = [{day:1},{day:2},{day:3},{day:4},{day:5},{day:6},{day:7}]
+  const numbersDays = [{day:"L"},{day:2},{day:3},{day:4},{day:5},{day:6},{day:7}]
 
   const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) { // вопросики по параметрам

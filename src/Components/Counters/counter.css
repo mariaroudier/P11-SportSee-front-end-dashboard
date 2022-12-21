@@ -1,0 +1,24 @@
+.counters {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+      right: 0;
+}
+
+.calories-counter {
+      display: flex;
+      padding: 32px;
+
+
+}
+
+.img-counter {
+      width: 60px;
+      height: 60px;
+}
+
+.text-counter {
+      display: flex;
+      flex-direction: column;
+}
