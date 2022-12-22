@@ -1,15 +1,9 @@
-.counters {
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      width: 300px;
-      right: 0;
-}
-
-.calories-counter {
+.box-counter {
       display: flex;
       padding: 32px;
-
+      width: fit-content;
+      gap: 24px;
+      align-items: center;
 
 }
 
@@ -21,4 +15,15 @@
 .text-counter {
       display: flex;
       flex-direction: column;
+      gap: 5px;
+}
+
+.quantity-calories {
+      color: #282D30;
+      font-size: 20px;
+}
+
+.type-counter {
+      color: #74798C;
+      font-size: 14px;
 }

@@ -23,21 +23,15 @@ function Counter({type, counter}) {
                   srcImg = `${Lipids}`
             break;
       }
-            
       return(
-            <>
-                  <div className='box-counter'> 
-                                    <img className='img-counter' src={srcImg} />
-                                    <div className='text-counter'>
-                                          <span>{counter}kCal</span>
-                                          <span>{type}</span>
-                                    </div>
+            <div className='box-counter'> 
+                  <img className='img-counter' src={srcImg} />
+                  <div className='text-counter'>
+                        <span className='quantity-calories'>{counter}kCal</span>
+                        <span className='type-counter'>{type}</span>
                   </div>
-            </>
+            </div>
       )
-      
-
-
 }
 
 export default Counter;
