@@ -7,7 +7,28 @@ import OvalRed from './Oval_red.png'
 
 
 function DailyActivity({data}) {
-  const numbersDays = [{day:"L"},{day:2},{day:3},{day:4},{day:5},{day:6},{day:7}]
+  const newData = data.map(el => {
+
+    switch(new Date(el.day).getDate()){
+      case 1:
+        return{ ...el, day: '1'}
+      case 2:
+        return { ...el, day: '2' }
+      case 3:
+        return { ...el, day: '3' }
+      case 4:
+        return { ...el, day: '4' }
+      case 5:
+        return { ...el, day: '5' }
+      case 6:
+        return { ...el, day: '6' }
+      case 7:
+        return { ...el, day: '7' }
+    }
+  })
+
+
+
 
   const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) { // вопросики по параметрам
@@ -37,21 +58,20 @@ function DailyActivity({data}) {
         </div>
       );
   };
-
   return (
     <>
       <p className='titre-activity'>Activité quotidienne</p>
+      {console.log(newData)}
       <ResponsiveContainer className="container-activity" width="100%" height="100%">
 
         <BarChart
           width={835}
           height={320}
-          data={data}
+          data={newData}
           margin={{ top: 35,}} >
           
           <CartesianGrid strokeDasharray="2 2" stroke='#DEDEDE'/>
-          <XAxis data={numbersDays} datakey="day" stroke='#9B9EAC'/>
-         
+          <XAxis dataKey="day" stroke='#9B9EAC'/>
           <YAxis orientation="right" stroke="#FBFBFB" tick={{ fill: '#9B9EAC' }} tickLine={{ opacity:'0' }} />
           <Tooltip content={<CustomTooltip />} />
           <Legend content={<CustomLegend />} iconType="circle" wrapperStyle={{ top: -35, right: 0,  lineHeight: '24px',textAlign:'end'}}/>

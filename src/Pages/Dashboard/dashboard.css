@@ -2,7 +2,7 @@
       display: flex;
       position: relative;
       margin: 0;
-      width: 70%;
+      width: 100%;
       height: 320px;
 }
 
@@ -15,7 +15,9 @@
 
 #activity {
       display: flex;
+      flex-wrap: wrap;
       gap: 30px;
+      margin-top: 130px;
 }
 
 #linechart-activity-duration {
@@ -23,8 +25,7 @@
       position: relative;
       background-color: #FF0000;
       margin: 0;
-      margin-top: 50px;
-      width: 30%;
+      width: 258px;
       height: 263px;
       border-radius: 5px;
       -webkit-border-radius: 5px;
@@ -34,20 +35,24 @@
 }
 
 #radar-activity {
-      margin: 0;
-      margin-top: 50px;
-      padding-top: 13px;
-      width: 258px;
+      display: flex;
+      justify-content: center;
+      background-color: #282D30;
+      /* padding: 23px; */
+      width: 260px;
       height: 263px;
       border-radius: 5px;
 }
 
 #score-radial {
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      padding: 24px;
       margin: 0;
-      margin-top: 50px;
-      padding-top: 25px;
       width: 258px;
       height: 263px;
+      background-color: #FBFBFB;
       border-radius: 5px;
 }
 
@@ -55,6 +60,7 @@
       position: absolute;
       display: flex;
       flex-direction: column;
-      /* width: 300px; */
+      padding-right: 33px;
       right: 0;
+      gap: 35px;
 }

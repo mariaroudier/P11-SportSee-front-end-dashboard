@@ -79,6 +79,7 @@ function Dashboard() {
                         </div>
                         <div id='score-radial'>
                               <Score data={scoreData}/>
+                              {/* <Score /> */}
                         </div>
                   </div>
             </>
