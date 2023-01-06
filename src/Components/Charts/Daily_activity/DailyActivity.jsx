@@ -1,5 +1,5 @@
 import React from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Line } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Line, CartesianAxis } from 'recharts';
 import { useEffect, useState } from 'react';
 import './dailyActivity.css'
 import OvalBlack from './Oval_black.png'
@@ -61,22 +61,22 @@ function DailyActivity({data}) {
   return (
     <>
       <p className='titre-activity'>Activité quotidienne</p>
-      {console.log(newData)}
       <ResponsiveContainer className="container-activity" width="100%" height="100%">
-
         <BarChart
           width={835}
           height={320}
           data={newData}
-          margin={{ top: 35,}} >
+          margin={{ top: 95,}}
+          padding={{ left:40,}}
+          >
           
-          <CartesianGrid strokeDasharray="2 2" stroke='#DEDEDE'/>
-          <XAxis dataKey="day" stroke='#9B9EAC'/>
+          <CartesianGrid strokeDasharray="2 2" vertical={false} />
+          <XAxis dataKey="day" stroke='#9B9EAC'tickLine={false} />
           <YAxis orientation="right" stroke="#FBFBFB" tick={{ fill: '#9B9EAC' }} tickLine={{ opacity:'0' }} />
           <Tooltip content={<CustomTooltip />} />
-          <Legend content={<CustomLegend />} iconType="circle" wrapperStyle={{ top: -35, right: 0,  lineHeight: '24px',textAlign:'end'}}/>
-          <Bar dataKey="kilogram" fill="#282D30" barSize={7}/>
-          <Bar dataKey="calories" fill="#E60000" barSize={7}/>
+          <Legend content={<CustomLegend />} iconType="circle" wrapperStyle={{ top: 31, right: 0,  lineHeight: '24px',textAlign:'end'}}/>
+          <Bar dataKey="kilogram" fill="#282D30" barSize={7} radius={[10, 10, 0, 0]}/>
+          <Bar dataKey="calories" fill="#E60000" barSize={7} radius={[10, 10, 0, 0]}/>
         </BarChart>
       </ResponsiveContainer>
     </>

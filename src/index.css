@@ -20,7 +20,7 @@ code {
 #root {
   position: relative;
   width: 100vw;
-  height: 1px;
+  height: 100vh;
 }
 
 main {

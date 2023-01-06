@@ -1,5 +1,4 @@
 .container-activity {
-      margin-top: 75px;
       height: fit-content;
       background-color: #FBFBFB;
       border-radius: 5px;
@@ -7,6 +6,13 @@
       -moz-border-radius: 5px;
       -ms-border-radius: 5px;
       -o-border-radius: 5px;
+}
+
+.titre-activity {
+      position: absolute;
+      font-size: 15px;
+      left: 31px;
+      top: 20px;
 }
 
 .recharts-default-legend {
@@ -34,7 +40,7 @@
 .custom-legend {
       display: flex;
       justify-content: flex-end;
-      gap: 32px;
+      gap: 22px;
       padding-right: 20px;
 }
 

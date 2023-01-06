@@ -14,10 +14,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <Header />
+    <Sidebar />
     <main>
-      <Sidebar />
       <Dashboard />
-      
     </main>
   </BrowserRouter>,
 );
