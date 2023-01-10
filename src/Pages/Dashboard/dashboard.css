@@ -1,4 +1,4 @@
-#barchart-activity {
+#barchart {
       display: flex;
       position: relative;
       margin: 0;
@@ -7,14 +7,14 @@
       height: 320px;
 }
 
-#activity {
+#square-charts {
       display: flex;
       flex-wrap: wrap;
       gap: 30px;
       margin-top: 130px;
 }
 
-#linechart-activity-duration {
+#linechart {
       display: flex;
       position: relative;
       background-color: #FF0000;
@@ -28,7 +28,7 @@
       -o-border-radius: 5px;
 }
 
-#radar-activity {
+#radar {
       display: flex;
       justify-content: center;
       background-color: #282D30;
@@ -38,7 +38,7 @@
       border-radius: 5px;
 }
 
-#score-radial {
+#score {
       display: flex;
       position: relative;
       flex-direction: column;
@@ -56,6 +56,6 @@
       flex-direction: column;
       padding-right: 33px;
       right: 0;
-      top: 279px;
+      top: 294px;
       gap: 35px;
 }

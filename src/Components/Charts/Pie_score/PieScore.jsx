@@ -1,11 +1,11 @@
-import './score.css'
+import './pie_score.css'
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts'
 // import  {ResponsiveContainer, RadialBar,RadialBarChart,Legend} from 'recharts';
 
 
-function Score({data}){
+function PieScore({data}){
 
       const percentData = data*100
       const newData = [ {name : "Visible", score: percentData },
@@ -42,4 +42,4 @@ function Score({data}){
       )
 }
 
-export default Score;
+export default PieScore;

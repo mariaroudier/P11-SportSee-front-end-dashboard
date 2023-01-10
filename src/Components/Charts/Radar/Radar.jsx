@@ -1,10 +1,10 @@
-import './activity_radar.css'
+import './radar.css'
 import React, { PureComponent } from 'react';
 import { useEffect, useState } from 'react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 
 
-function ActivityRadar({data}) {
+function RadarActivity({data}) {
 
       const info = (data) => {
             return (data.map(el => {
@@ -14,19 +14,19 @@ function ActivityRadar({data}) {
                         el.kind = "Cardio"
                         break;
                         case 2:
-                        el.kind = "Energy"
+                        el.kind = "Energie"
                         break;
                         case 3:
                         el.kind = "Endurance"
                         break;
                         case 4:
-                        el.kind = "Strength"
+                        el.kind = "Force"
                         break;
                         case 5:
-                        el.kind = 'Speed'
+                        el.kind = 'Vitesse'
                         break;
                         case 6:
-                        el.kind = "Intensity"
+                        el.kind = "Intensité"
                         break;
                   }
             }))
@@ -45,5 +45,5 @@ function ActivityRadar({data}) {
       );
 }
 
-export default ActivityRadar;
+export default RadarActivity;
 

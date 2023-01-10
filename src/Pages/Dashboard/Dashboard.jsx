@@ -1,11 +1,10 @@
 import './dashboard.css'
 import Greetings from '../../components/Greetings/Greetings';
-import DailyActivity from '../../components/Charts/Daily_activity/DailyActivity'
-import ActivityDuration from '../../components/Charts/Activity_duration/ActivityDuration'
-import ActivityRadar from '../../components/Charts/Activity_radar/ActivityRadar'
-import Score from '../../components/Charts/Score/Score'
+import BarActivity from '../../components/Charts/Bar_activity/BarActivity'
+import LineActivity from '../../components/Charts/Line_activity/LineActivity'
+import RadarActivity from '../../components/Charts/Radar/Radar'
+import PieScore from '../../components/Charts/Pie_score/PieScore'
 import Counter from '../../components/Counters/Counter'
-import { json } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 
@@ -42,6 +41,7 @@ function Dashboard() {
                   const response = await fetch('http://localhost:3000/user/12/average-sessions');
                   const json = await response.json();
                   setSessions(json.data.sessions)
+                  
             }
             getSessionsDuration()
       },[])
@@ -67,19 +67,18 @@ function Dashboard() {
                         <Counter type='Lipides' counter={countersData.lipidCount} />
                   </div>
                   
-                  <div id='barchart-activity'>
-                        <DailyActivity data={activityData}/>
+                  <div id='barchart'>
+                        <BarActivity data={activityData}/>
                   </div>
-                  <div id='activity'>
-                        <div id='linechart-activity-duration'>
-                              <ActivityDuration data={sessionsData}/>
+                  <div id='square-charts'>
+                        <div id='linechart'>
+                              <LineActivity data={sessionsData}/>
                         </div>
-                        <div id='radar-activity'>
-                              <ActivityRadar data={radarData}/>
+                        <div id='radar'>
+                              <RadarActivity data={radarData}/>
                         </div>
-                        <div id='score-radial'>
-                              <Score data={scoreData}/>
-                              {/* <Score /> */}
+                        <div id='score'>
+                              <PieScore data={scoreData}/>
                         </div>
                   </div>
             </>

@@ -1,20 +1,18 @@
-.recharts-cartesian-axis-line {
-      stroke: none;
-}
-
 .legend-session-label {
+      position: absolute;
       color: white;
       font-size: 15px;
       opacity: 0.5;
       width: 50%;
+      left: 20px;
+      top: 20px;
 
 }
-
-
 
 .custom-session-tooltip {
       background-color: white;
       color: black;
+
 
 }
 
