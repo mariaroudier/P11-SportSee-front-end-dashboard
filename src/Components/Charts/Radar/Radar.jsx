@@ -1,15 +1,20 @@
 import './radar.css'
-import React, { PureComponent } from 'react';
-import { useEffect, useState } from 'react';
+import React from 'react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 
-
+/**
+ * @param {*} data - to display in the pie chart
+ * @returns a component with the pie chart
+ */
 function RadarActivity({data}) {
 
+      /**
+      * @param {*} el.kind - to replace a number by name of activity
+      * @returns data with changed "kind"
+      */
       const info = (data) => {
             return (data.map(el => {
                   switch(el.kind) {
-
                         case 1:
                         el.kind = "Cardio"
                         break;
@@ -29,6 +34,7 @@ function RadarActivity({data}) {
                         el.kind = "Intensité"
                         break;
                   }
+                  return ""
             }))
       }
       info(data)

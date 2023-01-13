@@ -5,7 +5,10 @@ import iconVelo from './icon_velo.png'
 import iconMeditation from './icon_meditation.png'
 import iconGym from './icon_gym.png'
 
-
+/**
+ * To display the elements of sidebar div
+ * @returns an element with clickable icons and copyright text
+ */
 function Sidebar() {
       return (
             <aside>

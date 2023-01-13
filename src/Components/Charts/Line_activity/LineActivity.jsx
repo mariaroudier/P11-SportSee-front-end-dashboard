@@ -1,13 +1,10 @@
 import './line_activity.css'
-import React, { PureComponent } from 'react';
-import { useEffect, useState } from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-
+import React from 'react';
+import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 /**
- * 
- * @param {*} Data to display in activity duration charts
- * @returns a component with the activity chart
+ * @param {*} data - to display in line chart
+ * @returns a component with the line chart
  */
 function LineActivity({data}) {
 
@@ -28,6 +25,7 @@ function LineActivity({data}) {
       case 7:
         return { ...el, dayName: 'D' }
     }
+    return ""
   })
     
     const CustomLegend = () => {

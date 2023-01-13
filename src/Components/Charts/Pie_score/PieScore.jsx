@@ -1,16 +1,18 @@
 import './pie_score.css'
 import React from 'react';
-import { useEffect, useState } from 'react';
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts'
-// import  {ResponsiveContainer, RadialBar,RadialBarChart,Legend} from 'recharts';
+import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts'
 
-
+/**
+ * @param {*} data - to display in the pie chart
+ * @returns a component with the pie chart
+ */
 function PieScore({data}){
 
       const percentData = data*100
-      const newData = [ {name : "Visible", score: percentData },
-                        {name: "Unvisible", score: 100 - percentData}
-      ]
+      const newData = 
+            [ {name : "Visible", score: percentData },
+                  {name: "Unvisible", score: 100 - percentData}
+            ]
       const COLORS = ["#FF0000", "#FBFBFB"];
       return(
             <>

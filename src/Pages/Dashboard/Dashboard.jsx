@@ -7,8 +7,12 @@ import PieScore from '../../components/Charts/Pie_score/PieScore'
 import Counter from '../../components/Counters/Counter'
 import { useEffect, useState } from 'react';
 
-
+/**
+ * @param {*} data - to display the content of the page
+ * @returns the greetings, charts, counters
+ */
 function Dashboard() {
+
 // greetings
       const [nameData,setName] = useState([])
       const [scoreData,setScore] = useState([])
@@ -20,42 +24,39 @@ function Dashboard() {
                   setName(json.data.userInfos.firstName)
                   setScore(json.data.todayScore)
                   setCounters(json.data.keyData)
-
             }
             getMainInfo()
       },[])
 // daily activity
-      const [activityData,setActivity] = useState([])
+      const [dailyData,setActivity] = useState([])
       useEffect(() => {
-            const  getSessionsInfo = async() => {
+            const  getdailyData = async() => {
                   const response = await fetch('http://localhost:3000/user/12/activity');
                   const json = await response.json();
                   setActivity(json.data.sessions)
             }
-            getSessionsInfo()
+            getdailyData()
       },[])
 // sessions duration
       const [sessionsData,setSessions] = useState([])
       useEffect(() => {
-            const  getSessionsDuration = async() => {
+            const  getsessionsData = async() => {
                   const response = await fetch('http://localhost:3000/user/12/average-sessions');
                   const json = await response.json();
                   setSessions(json.data.sessions)
-                  
             }
-            getSessionsDuration()
+            getsessionsData()
       },[])
 // activity radar
       const [radarData,setRadar] = useState([])
             useEffect(() => {
-                  const  getRadarActivity = async() => {
+                  const  getRadarData = async() => {
                         const response = await fetch('http://localhost:3000/user/12/performance');
                         const json = await response.json();
                         setRadar(json.data.data)
                   }
-                  getRadarActivity()
+                  getRadarData()
             },[])
-
 
       return (
             <>
@@ -66,9 +67,8 @@ function Dashboard() {
                         <Counter type='Glucides' counter={countersData.carbohydrateCount} />
                         <Counter type='Lipides' counter={countersData.lipidCount} />
                   </div>
-                  
                   <div id='barchart'>
-                        <BarActivity data={activityData}/>
+                        <BarActivity data={dailyData}/>
                   </div>
                   <div id='square-charts'>
                         <div id='linechart'>
@@ -83,7 +83,6 @@ function Dashboard() {
                   </div>
             </>
       )
-
 }
 
 export default Dashboard;

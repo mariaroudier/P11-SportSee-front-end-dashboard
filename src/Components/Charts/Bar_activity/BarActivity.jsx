@@ -1,11 +1,19 @@
 import React from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Line, CartesianAxis } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import './bar_activity.css'
 import OvalBlack from './Oval_black.png'
 import OvalRed from './Oval_red.png'
 
-
+/**
+ * @param {*} data - to display in the bar chart
+ * @returns a component with the bar chart
+ */
 function BarActivity({data}) {
+
+  /**
+   * @param {*} el - the value of the date of data
+   * @returns data with changed value of "key"
+   */
   const newData = data.map(el => {
     switch(new Date(el.day).getDate()){
       case 1:
@@ -23,6 +31,7 @@ function BarActivity({data}) {
       case 7:
         return { ...el, day: '7' }
     }
+    return ""
   })
 
   const CustomTooltip = ({ active, payload, label }) => {
@@ -52,6 +61,7 @@ function BarActivity({data}) {
       </div>
     );
   };
+
   return (
     <>
       <p className='titre-activity'>Activité quotidienne</p>
@@ -61,8 +71,6 @@ function BarActivity({data}) {
           height={320}
           data={newData}
           margin={{ top: 95 }}
-          
-
           >
           <CartesianGrid strokeDasharray="2 2" vertical={false} />
           <XAxis strokeDasharray="0 0" dataKey="day" stroke='#9B9EAC' tickLine={false}/>
@@ -74,9 +82,7 @@ function BarActivity({data}) {
         </BarChart>
       </ResponsiveContainer>
     </>
-
   )
-
 }
 
 export default BarActivity;

@@ -2,6 +2,10 @@ import logo from './logo.png';
 import { NavLink } from 'react-router-dom';
 import './header.css';
 
+/**
+ * To display header
+ * @returns a header with the clickable icons and logo
+ */
 function Header() {
 
   return (
