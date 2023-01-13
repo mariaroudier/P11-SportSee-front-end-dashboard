@@ -2,13 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
-import Header from './components/Header/Header';
-import Sidebar from './components/Sidebar/Sidebar';
-import Dashboard from './pages/Dashboard/Dashboard';
+import Header from './Components/Header/Header';
+import Sidebar from './Components/Sidebar/Sidebar';
+import Dashboard from './Pages/Dashboard/Dashboard';
 import reportWebVitals from './reportWebVitals';
 
 
-<script src="http://localhost:8097"></script>
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>

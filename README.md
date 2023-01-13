@@ -2,29 +2,16 @@
 
 ## Installation ##
 
-Please download the project and open the project folder on your computer.
-Enter the following commands in the terminal:
+Please clone the project on your computer with the command :
+> git clone https://github.com/mariaroudier/P11-SportSee-front-end-dashboard.git
 
-> npx create-react-app my-app
+Enter the following command in the terminal for go in the project's folder :
+> cd P11-SportSee-front-end-dashboard
 
-> cd my-app
-
-> npm install react-router-dom
-
-Next, replace the src, public folders and the read.me file with the folders of the same name and the file from the downloaded project.
-
-
-## Installation of library Recharts ##
-
-Enter the command in the terminal:
-> npm install recharts
-
+## Installation of dependencies ##
+To install dependencies enter the command : 
+> npm install
 
 ## Application launch ##
-
-To run the application, enter the command in the terminal:
+To run the application, enter the command in the terminal :
 > npm start
-
-
-
-

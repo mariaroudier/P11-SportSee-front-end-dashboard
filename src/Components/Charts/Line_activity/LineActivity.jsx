@@ -25,9 +25,8 @@ function LineActivity({data}) {
       case 7:
         return { ...el, dayName: 'D' }
       default:
-        el.day = ""
+        return { ...el }
     }
-    return ""
   })
     
     const CustomLegend = () => {

@@ -15,29 +15,32 @@ function BarActivity({data}) {
    * @returns data with changed value of "key"
    */
   const newData = data.map(el => {
-    switch(new Date(el.day).getDate()){
-      case 1:
-        return{ ...el, day: '1'}
-      case 2:
-        return { ...el, day: '2' }
-      case 3:
-        return { ...el, day: '3' }
-      case 4:
-        return { ...el, day: '4' }
-      case 5:
-        return { ...el, day: '5' }
-      case 6:
-        return { ...el, day: '6' }
-      case 7:
-        return { ...el, day: '7' }
-      default:
-        el.day = ""
+    if (el.day) {
+      switch(new Date(el.day).getDate()){
+        case 1:
+          return{ ...el, day: '1'}
+        case 2:
+          return { ...el, day: '2' }
+        case 3:
+          return { ...el, day: '3' }
+        case 4:
+          return { ...el, day: '4' }
+        case 5:
+          return { ...el, day: '5' }
+        case 6:
+          return { ...el, day: '6' }
+        case 7:
+          return { ...el, day: '7' }
+        default:
+          return { ...el }
+      }
+    } else {
+      return { ...el }
     }
-    return ""
   })
 
   const CustomTooltip = ({ active, payload, label }) => {
-    if (active && payload && payload.length) { // вопросики по параметрам
+    if (active && payload && payload.length) { 
       return (
         <div className="custom-tooltip">
           <p className="label">{`${payload[0].value}kg`}</p>

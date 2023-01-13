@@ -1,10 +1,10 @@
 import './dashboard.css'
-import Greetings from '../../components/Greetings/Greetings';
-import BarActivity from '../../components/Charts/Bar_activity/BarActivity'
-import LineActivity from '../../components/Charts/Line_activity/LineActivity'
-import RadarActivity from '../../components/Charts/Radar/Radar'
-import PieScore from '../../components/Charts/Pie_score/PieScore'
-import Counter from '../../components/Counters/Counter'
+import Greetings from '../../Components/Greetings/Greetings';
+import BarActivity from '../../Components/Charts/Bar_activity/BarActivity'
+import LineActivity from '../../Components/Charts/Line_activity/LineActivity'
+import RadarActivity from '../../Components/Charts/Radar/Radar'
+import PieScore from '../../Components/Charts/Pie_score/PieScore'
+import Counter from '../../Components/Counters/Counter'
 import { useEffect, useState } from 'react';
 
 /**
@@ -13,7 +13,6 @@ import { useEffect, useState } from 'react';
  */
 function Dashboard() {
 
-// greetings
       const [nameData,setName] = useState([])
       const [scoreData,setScore] = useState([])
       const [countersData,setCounters] = useState([])
@@ -27,7 +26,7 @@ function Dashboard() {
             }
             getMainInfo()
       },[])
-// daily activity
+
       const [dailyData,setActivity] = useState([])
       useEffect(() => {
             const  getdailyData = async() => {
@@ -37,7 +36,7 @@ function Dashboard() {
             }
             getdailyData()
       },[])
-// sessions duration
+
       const [sessionsData,setSessions] = useState([])
       useEffect(() => {
             const  getsessionsData = async() => {
@@ -47,7 +46,7 @@ function Dashboard() {
             }
             getsessionsData()
       },[])
-// activity radar
+
       const [radarData,setRadar] = useState([])
             useEffect(() => {
                   const  getRadarData = async() => {
