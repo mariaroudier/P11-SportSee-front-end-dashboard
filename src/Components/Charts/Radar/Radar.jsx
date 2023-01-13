@@ -33,6 +33,8 @@ function RadarActivity({data}) {
                         case 6:
                         el.kind = "Intensité"
                         break;
+                        default:
+                        el.kind = ""
                   }
                   return ""
             }))

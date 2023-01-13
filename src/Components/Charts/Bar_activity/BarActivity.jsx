@@ -30,6 +30,8 @@ function BarActivity({data}) {
         return { ...el, day: '6' }
       case 7:
         return { ...el, day: '7' }
+      default:
+        el.day = ""
     }
     return ""
   })

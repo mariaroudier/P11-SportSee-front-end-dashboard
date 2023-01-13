@@ -24,6 +24,8 @@ function LineActivity({data}) {
         return { ...el, dayName: 'S' }
       case 7:
         return { ...el, dayName: 'D' }
+      default:
+        el.day = ""
     }
     return ""
   })

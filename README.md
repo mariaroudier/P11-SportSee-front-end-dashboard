@@ -1,32 +1,27 @@
-SportSee
+# SportSee #
+
+## Installation ##
+
+Please download the project and open the project folder on your computer.
+Enter the following commands in the terminal:
+
+> npx create-react-app my-app
+> cd my-app
+> npm install react-router-dom
+
+Next, replace the src, public folders and the read.me file with the folders of the same name and the file from the downloaded project.
 
 
-## Installation
-Пожалуйста скачайте проект и откройте папку проекта на вашем компьютере. 
+## Installation of library Recharts ##
 
-введите в терминале следующие команды:
-
-npx create-react-app my-app
-
-npm install react-router-dom
-
-cd my-app
+Enter the command in the terminal:
+> npm install recharts
 
 
-Далее удалите содержимое папки src в папке my-app. Затем в эту папку переместить папки components и pages из скачанного проекта. В эту же папку src переместить остальные файлы из проекта. 
-Замените содержимое папки public из my-app на содержимое папки public из скачанного проекта. 
+## Application launch ##
 
-Установка библиотеки Recharts
-
-Введите команду в терминале:
-
-npm install recharts
-
-Запуск приложения
-
-Для запуска приложения введите команду в терминале:
-
-npm start
+To run the application, enter the command in the terminal:
+> npm start
 
 
 
