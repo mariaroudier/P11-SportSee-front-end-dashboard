@@ -45,10 +45,10 @@ function RadarActivity({data}) {
             return (
                   <ResponsiveContainer width="100%" height="100%">
                         <RadarChart cx="50%" cy="50%" outerRadius="55%" data={info(data)}>
-                        <PolarGrid radialLines={false} />
-                        <PolarAngleAxis dataKey="kind" tick={{ fill: '#FFFFFF' }} fillOpacity={1} />
-                        <PolarRadiusAxis tickLine={{ opacity:'0' }} fillOpacity={0} stroke="none"  />
-                        <Radar  dataKey="value"  fill="#FF0101B2" fillOpacity={0.7} />
+                              <PolarGrid radialLines={false} />
+                              <PolarAngleAxis dataKey="kind" tick={{ fill: '#FFFFFF' }} fillOpacity={1} />
+                              <PolarRadiusAxis tickLine={{ opacity:'0' }} fillOpacity={0} stroke="none"  />
+                              <Radar  dataKey="value"  fill="#FF0101B2" fillOpacity={0.7} />
                         </RadarChart>
                   </ResponsiveContainer>
                   

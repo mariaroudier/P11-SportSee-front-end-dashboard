@@ -7,6 +7,7 @@ import Sidebar from './Components/Sidebar/Sidebar';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import reportWebVitals from './reportWebVitals';
 
+console.log(process.env.NODE_ENV)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

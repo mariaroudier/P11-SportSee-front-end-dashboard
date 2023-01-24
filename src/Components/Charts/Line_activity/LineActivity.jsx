@@ -35,7 +35,7 @@ function LineActivity({data}) {
       );
     }
     const CustomTooltip = ({ active, payload, label }) => {
-      if (active && payload && payload.length) { // вопросики по параметрам
+      if (active && payload && payload.length) {
         return (
           <div className="custom-session-tooltip">
             <p className="label-session">{`${payload[0].value} min`}</p>
@@ -52,7 +52,7 @@ function LineActivity({data}) {
         <YAxis hide domain={['dataMin-10', 'dataMax+1']} padding={{ top: 70}}/>
         <Tooltip content={<CustomTooltip />} />
         <Legend content={<CustomLegend />} wrapperStyle={{ top: 0 }} />
-        <Line type="monotone" dataKey="sessionLength" stroke="#FFFFFF" activeDot={{ r: 8 }} dot={{ r:0 }} strokeWidth="2"/>
+        <Line type="monotone" ReferenceArea dataKey="sessionLength" stroke="#FFFFFF" activeDot={{ r: 8 }} dot={{ r:0 }} strokeWidth="2"/>
       </LineChart>
     </ResponsiveContainer>
   );

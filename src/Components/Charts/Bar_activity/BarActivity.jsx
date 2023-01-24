@@ -62,7 +62,6 @@ function BarActivity({data}) {
           <img className="oval-icon" src={OvalRed} alt="oval icon"></img>
           <p label="calories" className="legend-label">Calories brûlées (kCal)</p>
         </div>
-        
       </div>
     );
   };
