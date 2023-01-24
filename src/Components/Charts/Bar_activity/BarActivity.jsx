@@ -3,41 +3,18 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsive
 import './bar_activity.css'
 import OvalBlack from './Oval_black.png'
 import OvalRed from './Oval_red.png'
+import { checkBarData } from '../../../lib/check'
 
 /**
  * @param {*} data - to display in the bar chart
  * @returns a component with the bar chart
  */
 function BarActivity({data}) {
-
   /**
    * @param {*} el - the value of the date of data
    * @returns data with changed value of "key"
    */
-  const newData = data.map(el => {
-    if (el.day) {
-      switch(new Date(el.day).getDate()){
-        case 1:
-          return{ ...el, day: '1'}
-        case 2:
-          return { ...el, day: '2' }
-        case 3:
-          return { ...el, day: '3' }
-        case 4:
-          return { ...el, day: '4' }
-        case 5:
-          return { ...el, day: '5' }
-        case 6:
-          return { ...el, day: '6' }
-        case 7:
-          return { ...el, day: '7' }
-        default:
-          return { ...el }
-      }
-    } else {
-      return { ...el }
-    }
-  })
+  const newData = checkBarData(data)
 
   const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) { 

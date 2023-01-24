@@ -1,6 +1,7 @@
 import './line_activity.css'
 import React from 'react';
 import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { checkLineData } from '../../../lib/check'
 
 /**
  * @param {*} data - to display in line chart
@@ -8,26 +9,28 @@ import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } f
  */
 function LineActivity({data}) {
 
-  const newData = data.map(el => {
-    switch(el.day){
-      case 1:
-        return{ ...el, dayName: 'L'}
-      case 2:
-        return { ...el, dayName: 'M' }
-      case 3:
-        return { ...el, dayName: 'M' }
-      case 4:
-        return { ...el, dayName: 'J' }
-      case 5:
-        return { ...el, dayName: 'V' }
-      case 6:
-        return { ...el, dayName: 'S' }
-      case 7:
-        return { ...el, dayName: 'D' }
-      default:
-        return { ...el }
-    }
-  })
+  const newData = checkLineData(data) 
+  
+  // data.map(el => {
+  //   switch(el.day){
+  //     case 1:
+  //       return{ ...el, dayName: 'L'}
+  //     case 2:
+  //       return { ...el, dayName: 'M' }
+  //     case 3:
+  //       return { ...el, dayName: 'M' }
+  //     case 4:
+  //       return { ...el, dayName: 'J' }
+  //     case 5:
+  //       return { ...el, dayName: 'V' }
+  //     case 6:
+  //       return { ...el, dayName: 'S' }
+  //     case 7:
+  //       return { ...el, dayName: 'D' }
+  //     default:
+  //       return { ...el }
+  //   }
+  // })
     
     const CustomLegend = () => {
       return (

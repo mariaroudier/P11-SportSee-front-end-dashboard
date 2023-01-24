@@ -1,23 +1,19 @@
 import React from 'react';
+import { useEffect, useState } from 'react';
 import './dashboard.css'
-import {GetMainData, GetMainData2 } from '../../lib/service.js';
+import {getMainData, getDailyActivity, getSession, getPerformance } from '../../lib/service.js';
 import Greetings from '../../Components/Greetings/Greetings';
 import BarActivity from '../../Components/Charts/Bar_activity/BarActivity'
 import LineActivity from '../../Components/Charts/Line_activity/LineActivity'
 import RadarActivity from '../../Components/Charts/Radar/Radar'
 import PieScore from '../../Components/Charts/Pie_score/PieScore'
 import Counter from '../../Components/Counters/Counter'
-import { useEffect, useState } from 'react';
-
-
 
 /**
  * @param {*} data - to display the content of the page
  * @returns the greetings, charts, counters
  */
 function Dashboard() {
-      
-
       const [nameData,setName] = useState([])
       const [scoreData,setScore] = useState([])
       const [countersData,setCounters] = useState([])
@@ -27,7 +23,7 @@ function Dashboard() {
              * @returns data
              */
             const  getMainInfo = async() => {
-                  const json = await GetMainData()
+                  const json = await getMainData()
                   setName(json.data.userInfos.firstName)
                   setScore(json.data.todayScore)
                   setCounters(json.data.keyData)
@@ -42,8 +38,7 @@ function Dashboard() {
              * @returns data
              */
             const  getdailyData = async() => {
-                  const response = await fetch('http://localhost:3000/user/12/activity');
-                  const json = await response.json();
+                  const json = await getDailyActivity();
                   setActivity(json.data.sessions)
             }
             getdailyData()
@@ -56,8 +51,7 @@ function Dashboard() {
              * @returns data
              */
             const  getsessionsData = async() => {
-                  const response = await fetch('http://localhost:3000/user/12/average-sessions');
-                  const json = await response.json();
+                  const json = await getSession();
                   setSessions(json.data.sessions)
             }
             getsessionsData()
@@ -70,8 +64,7 @@ function Dashboard() {
                   * @returns data
                   */
                   const  getRadarData = async() => {
-                        const response = await fetch('http://localhost:3000/user/12/performance');
-                        const json = await response.json();
+                        const json = await getPerformance();
                         setRadar(json.data.data)
                   }
                   getRadarData()
