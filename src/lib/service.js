@@ -2,6 +2,7 @@ import { USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE 
 
 var mock = false
 
+
 export async function getMainData() {
       if (mock) {
             return USER_MAIN_DATA.find(user => user.id == 12)
@@ -11,6 +12,7 @@ export async function getMainData() {
             return json
       }
 }
+
 export async function getDailyActivity() {
       if (mock) {
             return USER_ACTIVITY.find(user => user.id == 12)
@@ -33,7 +35,7 @@ export async function getSession() {
 
 export async function getPerformance() {
       if (mock) {
-            return USER_PEGetPerformanceRFORMANCE.find(user => user.id == 12)
+            return USER_PERFORMANCE.find(user => user.id == 12)
       } else {
             const response = await fetch('http://localhost:3000/user/12/performance');
             const json = await response.json();

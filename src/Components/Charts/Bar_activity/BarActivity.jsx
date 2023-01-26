@@ -10,10 +10,7 @@ import { checkBarData } from '../../../lib/check'
  * @returns a component with the bar chart
  */
 function BarActivity({data}) {
-  /**
-   * @param {*} el - the value of the date of data
-   * @returns data with changed value of "key"
-   */
+
   const newData = checkBarData(data)
 
   const CustomTooltip = ({ active, payload, label }) => {

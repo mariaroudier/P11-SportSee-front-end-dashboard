@@ -10,27 +10,6 @@ import { checkLineData } from '../../../lib/check'
 function LineActivity({data}) {
 
   const newData = checkLineData(data) 
-  
-  // data.map(el => {
-  //   switch(el.day){
-  //     case 1:
-  //       return{ ...el, dayName: 'L'}
-  //     case 2:
-  //       return { ...el, dayName: 'M' }
-  //     case 3:
-  //       return { ...el, dayName: 'M' }
-  //     case 4:
-  //       return { ...el, dayName: 'J' }
-  //     case 5:
-  //       return { ...el, dayName: 'V' }
-  //     case 6:
-  //       return { ...el, dayName: 'S' }
-  //     case 7:
-  //       return { ...el, dayName: 'D' }
-  //     default:
-  //       return { ...el }
-  //   }
-  // })
     
     const CustomLegend = () => {
       return (

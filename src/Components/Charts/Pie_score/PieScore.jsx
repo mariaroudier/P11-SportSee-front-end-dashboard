@@ -10,12 +10,8 @@ import { checkPieData } from '../../../lib/check'
 function PieScore({data}){
 
       const percentData = data*100
-      // const newData = 
-      //       [ {name : "Visible", score: percentData },
-      //             {name: "Unvisible", score: 100 - percentData}
-      //       ]
       const newData = checkPieData(data,percentData)
-      
+
       const COLORS = ["#FF0000", "#FBFBFB"];
       return(
             <>
